@@ -1,0 +1,16 @@
+/**
+ * Created by ElenaSolovey on 12/15/2022.
+ */
+
+.accountItemCard {
+    margin: 5%;
+    --slds-c-card-radius-border : 0,25px;
+    --slds-c-card-shadow : 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    --slds-c-card-color-border:	#b5bbd0;
+
+}
+
+lightning-card:hover{
+    --slds-c-card-shadow : 5px 5px 5px 5px rgba(24, 133, 189, 0.98);
+    --slds-c-card-color-border: rgba(19, 114, 169, 0.85);
+}

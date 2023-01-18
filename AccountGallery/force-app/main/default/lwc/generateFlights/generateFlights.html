@@ -1,0 +1,23 @@
+<!--
+ - Created by Alena Shaliuta on 12/7/2022.
+ -->
+
+<!-- Generate Flights -->
+<template>
+    <div class="slds-is-relative slds-size_2-of-3" style="margin-left: 17%">
+      <lightning-spinner variant="brand" if:true={showSpinner} ></lightning-spinner>
+      <lightning-card title="Generate Flight" icon-name="custom:custom20">
+        <div class="slds-m-around_medium">
+          <lightning-record-edit-form object-api-name="Flight__c" onsuccess={flightCreationHandler} onerror={flightCreationErrorHandler}>
+            <div class="slds-grid">
+              <lightning-input-field field-name="DepartureAirport__c" class="slds-size_5-of-12" onchange={handleChangeArrivalAirport}></lightning-input-field>
+              <lightning-icon icon-name="utility:forward" size="small" class="slds-m-horizontal_small slds-m-top_large"></lightning-icon>
+              <lightning-input-field field-name="ArrivalAirport__c" class="slds-size_5-of-12" onchange={handleChangeDepartureAirport}></lightning-input-field>
+              <lightning-button label="Generate" title="Generate Flight" variant="brand-outline" onclick={generateFlight} disabled={generateFlightDisabled}
+                                class="slds-m-horizontal_small slds-m-top_large slds-size_1-of-12"></lightning-button>
+            </div>
+          </lightning-record-edit-form>
+        </div>
+      </lightning-card>
+    </div>
+</template>

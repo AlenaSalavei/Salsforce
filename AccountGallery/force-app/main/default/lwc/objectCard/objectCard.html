@@ -1,0 +1,25 @@
+<!--
+ - Created by ElenaSolovey on 12/14/2022.
+ -->
+
+<!-- Object Card -->
+<template>
+  <lightning-card title="Account" icon-name="standard:account" class="slds-m-around_small accountItemCard" onclick={handleOpenDetails} >
+    <div>
+      Name: <lightning-formatted-text value={accountRecord.Name}></lightning-formatted-text>
+    </div>
+    <div>
+      Owner: <lightning-formatted-text value={accountRecord.Owner.Name}></lightning-formatted-text>
+    </div>
+    <div>
+      Budget: <lightning-formatted-number format-style="currency" currency-code={accountRecord.CurrencyIsoCode}
+                                          value={accountRecord.Budget__c} maximum-fraction-digits="2"></lightning-formatted-number>
+    </div>
+    <div>
+      Employees: <lightning-formatted-number value={accountRecord.NumberOfEmployees__c}></lightning-formatted-number>
+    </div>
+    <div>
+      Type: <lightning-formatted-text value={accountRecord.Type}></lightning-formatted-text>
+    </div>
+  </lightning-card>
+</template>

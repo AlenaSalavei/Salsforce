@@ -1,0 +1,31 @@
+<!--
+ - Created by ElenaSolovey on 12/14/2022.
+ -->
+
+<!-- Account Collection -->
+<template>
+  <div class="container">
+    <div class="slds-card__header">
+      <div class="slds-p-top_medium slds-p-bottom_medium component-header">
+        <div class="slds-col slds-size_10-of-12">
+          <h1 class="slds-text-heading_medium">Find an Account</h1>
+        </div>
+        <div class="slds-align_absolute-center">
+          <lightning-combobox
+            name="Account Type"
+            label="Account Type"
+            value={value}
+            placeholder="Select Account Type"
+            options={typeFieldOptions}
+            onchange={handleChange} ></lightning-combobox>
+        </div>
+
+      </div>
+    </div>
+    <div class="slds-card__body_inner accountItemsList">
+        <template for:each={accountRecordList} for:item="accountRecord">
+          <c-object-card account-record={accountRecord} key={accountRecord.Id}></c-object-card>
+        </template>
+    </div>
+  </div>
+</template>
